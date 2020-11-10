@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "commander": "^6.2.0",
     "yarn": "^1.22.10"
   },
   "name": "cli",

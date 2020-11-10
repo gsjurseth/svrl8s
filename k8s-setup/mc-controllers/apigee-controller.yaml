@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apigee-controller
+  namespace: mc-controllers
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apigee-controller
+  template:
+    metadata:
+      labels:
+        app: apigee-controller
+    spec:
+      containers:
+      - name: controller
+        image: eu.gcr.io/geirs-purdy-project/nodejs-controller:1
+        imagePullPolicy: Always
+        volumeMounts:
+        - name: hooks
+          mountPath: /node/hooks
+        - name: templates
+          mountPath: /node/templates
+      volumes:
+      - name: hooks
+        configMap:
+          name: apigee-controller
+      - name: templates
+        configMap:
+          name: template-yaml
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: apigee-controller
+  namespace: mc-controllers
+spec:
+  selector:
+    app: apigee-controller
+  ports:
+  - port: 80

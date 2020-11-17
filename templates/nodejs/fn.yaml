@@ -1,0 +1,16 @@
+apiVersion: apigee.google.com/v1
+kind: foonction
+metadata:
+  name: @@NAME@@
+  namespace: apigee
+spec:
+  name: @@NAME@@
+  version: 0.8
+  registryUrl: eu.gcr.io/geirspurdyproject
+  gateway: gateway
+  virtualService: foonctionsVirtualService
+  virtualServiceNamespace: foonctions
+  fnNamespace: foonctions
+  trigger: api
+  prefix: @@PREFIX@@
+  type: node

@@ -28,7 +28,7 @@ spec:
           name: apigee-controller
       - name: templates
         configMap:
-          name: template-yaml
+          name: templates
 ---
 apiVersion: v1
 kind: Service

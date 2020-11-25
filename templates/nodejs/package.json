@@ -1,0 +1,19 @@
+{
+  "name": "svrl8s",
+  "version": "0.8.0",
+  "description": "a nice little function",
+  "main": "server.js",
+  "scripts": {
+    "start": "node start"
+  },
+  "repository": "@@REPOSITORY@@",
+  "author": "@@AUTHOR@@",
+  "license": "@@LICENSE@@",
+  "dependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/register": "^7.12.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}

@@ -17,7 +17,7 @@ spec:
       required: ["spec"]
       properties:
         spec:
-          required: ["name","version","registryUrl","gateway","virtualService","trigger"]
+          required: ["name","version","registryUrl","gateway","virtualService","trigger","fnNamespace","virtualServiceNamespace","type"]
           properties:
             name:
               type: "string"
@@ -34,9 +34,21 @@ spec:
             virtualService:
               type: "string"
               minimum: 1
+            virtualServiceNamespace:
+              type: "string"
+              minimum: 1
+            fnNamespace:
+              type: "string"
+              minimum: 1
             trigger:
               type: "string"
               minimum: 1
             prefix:
+              type: "string"
+              minimum: 1
+            managedBy:
+              type: "string"
+              minimum: 1
+            type:
               type: "string"
               minimum: 1

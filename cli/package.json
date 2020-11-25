@@ -1,6 +1,9 @@
 {
   "dependencies": {
     "commander": "^6.2.0",
+    "find": "^0.3.0",
+    "node-wget-promise": "^0.1.6",
+    "shelljs": "^0.8.4",
     "yarn": "^1.22.10"
   },
   "name": "cli",

@@ -1,8 +1,12 @@
-buildTemplate: clean
-	tar cf fn-template.tar.gz --exclude Dockerfile --exclude package-lock.json --exclude fn-template.tar.gz  --exclude yarn* --exclude Makefile *
+all: clean functionTemplate dockerTemplate
 
-dockerTemplate: clean
-	tar cf docker-template.tar.gz --exclude **/*.js --exclude package-lock.json --exclude fn-template.tar.gz  --exclude yarn* --exclude Makefile *
+functionTemplate:
+	tar cf fn-template.tar.gz --exclude Dockerfile --exclude package-lock.json \
+		--exclude fn-template.tar.gz  --exclude yarn.lock --exclude Makefile --exclude *.tar.gz \
+		--exclude node_modules --exclude yarn-error.log --exclude docker-template.tar.gz *
+
+dockerTemplate:
+	tar cf docker-template.tar.gz Dockerfile
 
 clean:
 	rm -f fn-template.tar.gz docker-tempalte.tar.gz
